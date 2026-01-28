@@ -85,7 +85,8 @@ function updateLangToggle() {
     if (langToggle) {
         const langText = langToggle.querySelector('.lang-text');
         if (langText) {
-            langText.textContent = currentLang === 'ja' ? 'EN' : 'JA';
+            // Show current language: "日本語" when Japanese, "EN" when English
+            langText.textContent = currentLang === 'ja' ? '日本語' : 'EN';
         }
     }
 }
