@@ -22,8 +22,13 @@
                 <a href="index.html" class="pill-item active">Work¹</a>
                 <a href="info.html" class="pill-item">Info²</a>
             </div>
+            <div class="nav-lang">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                    <span class="lang-text">EN</span>
+                </button>
+            </div>
             <div class="nav-cta">
-                <a href="#footer" class="cta-link" style="transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);">• 連絡する</a>
+                <a href="#footer" class="cta-link" data-i18n="contact" style="transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);">• 連絡する</a>
             </div>
         </div>
     </nav>
@@ -46,7 +51,7 @@
         <div class="container">
             <div class="intro-content">
                 <p class="intro-text">
-                    <span class="intro-name">濵田紘誠</span> は、デザインを通じてユーザー中心の体験を創造し、日常の<b>「めんどくさい」</b>の解消を目指してる。
+                    <span class="intro-name">濵田紘誠</span> <span data-i18n="intro-text">は、デザインを通じてユーザー中心の体験を創造し、日常の<b>「めんどくさい」</b>の解消を目指してる。</span>
                 </p>
                 <a href="info.html" class="intro-cta">• Read my story</a>
             </div>
@@ -68,8 +73,8 @@
                             </div>
                         </div>
                         <div class="project-title-section">
-                            <h3 class="project-title">Reverie - 睡眠はたった30分で変えられる</h3>
-                            <p class="project-category">(UXハッカソンプロジェクト)</p>
+                            <h3 class="project-title">Reverie - <span data-i18n="reverie-subtitle">睡眠はたった30分で変えられる</span></h3>
+                            <p class="project-category" data-i18n="reverie-category">(UXハッカソンプロジェクト)</p>
                         </div>
                     </a>
                 </div>
@@ -83,8 +88,8 @@
                             </div>
                         </div>
                         <div class="project-title-section">
-                            <h3 class="project-title">NextScore - 予想はもっと、ワクワクできる</h3>
-                            <p class="project-category">(株式会社なんでもドラフト)</p>
+                            <h3 class="project-title">NextScore - <span data-i18n="nextscore-subtitle">予想はもっと、ワクワクできる</span></h3>
+                            <p class="project-category" data-i18n="nextscore-category">(株式会社なんでもドラフト)</p>
                         </div>
                     </a>
                     </div>
@@ -130,7 +135,7 @@
             <div class="footer-center">
                 <a href="https://drive.google.com/file/d/1gkL7CIYExAvZ_xyQMhxPjsltaehf9ac_/view?usp=sharing" class="footer-link" target="_blank">
                     <span class="footer-bullet">•</span>
-                    <span class="footer-text">レジュメを見る</span>
+                    <span class="footer-text" data-i18n="resume">レジュメを見る</span>
                 </a>
             </div>
             <div class="footer-right">
@@ -161,6 +166,7 @@
 
 
     <script src="script.js"></script>
+    <script src="i18n.js"></script>
 </body>
 </html>
 

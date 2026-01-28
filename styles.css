@@ -79,6 +79,38 @@ p {
     padding-left: 2rem;
 }
 
+.nav-lang {
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.lang-toggle {
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.lang-toggle:hover {
+    background: #1a1a1a;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.lang-text {
+    display: inline-block;
+}
+
 .nav-cta {
     position: absolute;
     right: 0;
@@ -1540,7 +1572,27 @@ p {
     }
 }
 
+@media (max-width: 768px) {
+    .nav-lang {
+        right: 100px;
+    }
+    
+    .lang-toggle {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.7rem;
+    }
+}
+
 @media (max-width: 480px) {
+    .nav-lang {
+        right: 80px;
+    }
+    
+    .lang-toggle {
+        padding: 0.25rem 0.6rem;
+        font-size: 0.65rem;
+    }
+    
     .hero-title {
         font-size: clamp(4rem, 10vw, 8rem);
     }
