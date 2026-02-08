@@ -5,7 +5,7 @@ const translations = {
         'contact': '連絡する',
         
         // Index page
-        'intro-text': 'は、デザインを通じてユーザー中心の体験を創造し、日常の<b>「めんどくさい」</b>の解消を目指してる。',
+        'intro-text': '<b>濵田紘誠</b>は、デザインを通じてユーザー中心の体験を創造し、日常の<b>「めんどくさい」</b>の解消を目指してる。',
         'reverie-subtitle': '睡眠はたった30分で変えられる',
         'reverie-category': '(UXハッカソンプロジェクト)',
         'nextscore-subtitle': '予想はもっと、ワクワクできる',
@@ -27,6 +27,8 @@ const translations = {
         'skill-problem-desc': 'ユーザーや状況を観察して本質的な課題を見抜き、それをデータや論理に基づいて具体的な改善策へと落とし込み、再現性のある形で成果に繋げます。',
         'skill-solution': 'ソリューション提案',
         'skill-solution-desc': '発見した問題に対して、創造的で実現可能なソリューションを提案します。アイデア出しからコンセプト設計、プロトタイプ作成まで、ビジネス目標とユーザーが実際に求めていることの両方を満たす解決策を導き出します。',
+        'skill-professional-docs': 'プロフェッショナルな書類作成',
+        'skill-professional-docs-desc': 'ブランドガイドラインやステークホルダーへのプロフェッショナルな見せ方を保ちながら、ピッチや提案資料で競合に差をつける、魅力的で目を引くデザインの創造性を加えます。',
         
         // Info page - Experience
         'exp-education-title': 'デザイン学部・UXデザイン専攻',
@@ -120,7 +122,8 @@ const translations = {
         'reverie-meta-duration-value': '3日間',
         'reverie-challenge-title': '不規則な睡眠ルーティーンが生産性の低下を招く',
         'reverie-challenge-desc-1': '「健康と生活習慣」',
-        'reverie-challenge-desc-2': 'というハッカソンのテーマをもとに、不規則な生活習慣が引き起こす睡眠の質の低下という課題を解決。就寝前後のルーティン改善で、利用者のウェルビーイング向上を目指すアプリです。',
+        'reverie-challenge-desc-2a': 'というハッカソンのテーマをもとに、',
+        'reverie-challenge-desc-2b': '、不規則な生活習慣が引き起こす睡眠の質の低下という課題を解決。就寝前後のルーティン改善で、利用者のウェルビーイング向上を目指すアプリです。',
         'reverie-discovery-title': '朝ごはんを食べていない',
         'reverie-discovery-desc-1': 'ふと疲れていそうなメンバーたちに朝ごはんを食べたか聞いたところ、3人とも食べていないことがわかりました。そこで僕は睡眠の質が原因で時間が取れず朝ごはんが食べれていない、また睡眠の質の悪化がその日の疲れや生産性の低下を引き起こすと考えました。',
         'reverie-discovery-desc-2': 'そこから、私たちは',
@@ -174,8 +177,8 @@ const translations = {
         'contact': 'Contact',
         
         // Index page
-        'intro-text': 'creates user-centered experiences through design, aiming to eliminate daily <b>"hassles"</b>.',
-        'reverie-subtitle': 'Sleep can be changed in just 30 minutes',
+        'intro-text': '<b>Kosei Hamada</b> creates user-centered experiences through design, aiming to eliminate daily <b>"hassles"</b>.',
+        'reverie-subtitle': 'Sleep can be changed in 30 mins',
         'reverie-category': '(UX Hackathon Project)',
         'nextscore-subtitle': 'Predictions can be more exciting',
         'nextscore-category': '(Nandemo Draft Inc.)',
@@ -196,6 +199,8 @@ const translations = {
         'skill-problem-desc': 'I observe users and situations to identify essential issues, translate them into concrete improvement strategies based on data and logic, and connect them to results in a reproducible way.',
         'skill-solution': 'Solution Proposal',
         'skill-solution-desc': 'For discovered problems, I propose creative and feasible solutions. From ideation to concept design and prototype creation, I derive solutions that satisfy both business goals and what users actually need.',
+        'skill-professional-docs': 'Professional Document Creation',
+        'skill-professional-docs-desc': 'While keeping brand guidelines and a professional appearance towards stakeholders, I bring creativity to design so that pitches and proposal materials are engaging and stand out among competitors.',
         
         // Info page - Experience
         'exp-education-title': 'Bachelor of Design, UX Design Major',
@@ -235,8 +240,8 @@ const translations = {
         'nextscore-challenge-desc': 'Against the backdrop of scattered prediction entertainment like public gambling and Winner, and an unorganized media landscape, this project designs a sports prediction experience that everyone can enjoy by delivering AI-powered unique match predictions directly to casual fans.',
         'nextscore-discovery-title': 'Casual Fans Who Can\'t Get Interested in Sports Predictions',
         'nextscore-discovery-desc-1': 'Many people who like watching sports feel that "predictions" are difficult to approach, and existing media tends to focus on stats and past records, making it hard to appeal to beginners and casual sports fans.',
-        'nextscore-discovery-desc-2': 'From there, we aimed to create a new prediction experience that doesn\'t rely solely on numerical analysis:',
-        'nextscore-discovery-desc-3': 'making predictions exciting',
+        'nextscore-discovery-desc-2': 'From there, we aimed to create a new prediction experience that doesn\'t rely solely on numerical analysis.',
+        'nextscore-discovery-desc-3': '',
         'nextscore-discovery-desc-4': '',
         'nextscore-research-title': 'Sports Fans\' Prediction Behavior Patterns',
         'nextscore-research-survey-title': '① Survey Results',
@@ -280,7 +285,7 @@ const translations = {
         'nextscore-future-next-5': 'Create content for users who want to learn more about predictions through our own media and blog',
         
         // Reverie project
-        'reverie-hero-subtitle': 'Sleep can be changed in just 30 minutes',
+        'reverie-hero-subtitle': 'Sleep can be changed in 30 mins',
         'reverie-hero-desc': 'This app advocates breaking away from "forced sleep." By optimizing the 30-minute routine before and after sleep, rather than just ensuring sleep time, it creates high-quality sleep led by users. Through personalized data analysis, it supports you from sleep so you can start each day in the best mood.',
         'reverie-meta-type': 'Type',
         'reverie-meta-duration': 'Duration',
@@ -289,13 +294,14 @@ const translations = {
         'reverie-meta-duration-value': '3 days',
         'reverie-challenge-title': 'Irregular Sleep Routines Lead to Decreased Productivity',
         'reverie-challenge-desc-1': '"Health and Lifestyle Habits"',
-        'reverie-challenge-desc-2': 'Based on this hackathon theme, this app solves the problem of decreased sleep quality caused by irregular lifestyle habits. It aims to improve users\' well-being through routine improvements before and after sleep.',
+        'reverie-challenge-desc-2a': 'Based on the hackathon\'s theme, ',
+        'reverie-challenge-desc-2b': ', this app solves the problem of decreased sleep quality caused by irregular lifestyle habits. It aims to improve users\' well-being through routine improvements before and after sleep.',
         'reverie-discovery-title': 'Not Eating Breakfast',
-        'reverie-discovery-desc-1': 'When I asked tired-looking team members if they had eaten breakfast, all three hadn\'t. I thought that sleep quality was causing them to not have time to eat breakfast, and that deteriorating sleep quality was causing fatigue and decreased productivity that day.',
+        'reverie-discovery-desc-1': 'When I asked tired-looking team members if they had eaten breakfast, all three hadn\'t. I thought that sleep quality was causing them to not have time to eat breakfast, and that deteriorating sleep quality was causing fatigue and decreased productivity.',
         'reverie-discovery-desc-2': 'From there, we set the theme of',
-        'reverie-discovery-desc-3': 'improving sleep quality',
+        'reverie-discovery-desc-3': ' improving sleep quality',
         'reverie-discovery-desc-4': '.',
-        'reverie-research-title': 'The Importance of Pre- and Post-Sleep Routines',
+        'reverie-research-title': 'The Importance of Pre and Post-Sleep Routines',
         'reverie-research-survey-title': '① Survey Results',
         'reverie-research-survey-1': 'Lack of Breakfast Habits',
         'reverie-research-survey-1-desc': 'About 23.1% of respondents answered that they "never eat breakfast." Including "2-4 times per week," this reaches nearly half.',
@@ -341,7 +347,7 @@ const translations = {
 };
 
 // Get current language from localStorage or default to Japanese
-let currentLang = localStorage.getItem('portfolio-lang') || 'ja';
+let currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
 // Function to set language
 function setLanguage(lang) {
@@ -357,14 +363,39 @@ function updatePageContent() {
     
     elements.forEach(element => {
         const key = element.getAttribute('data-i18n');
-        if (translations[currentLang] && translations[currentLang][key]) {
+        if (translations[currentLang] && key in translations[currentLang]) {
+            const value = translations[currentLang][key];
             if (element.tagName === 'A' || element.tagName === 'BUTTON') {
-                element.textContent = translations[currentLang][key];
+                element.textContent = value;
             } else {
-                element.innerHTML = translations[currentLang][key];
+                element.innerHTML = value;
             }
         }
     });
+
+    // Update Reverie brainstorming image by language (English = roadmap, Japanese = brainstorming)
+    const reverieImg = document.getElementById('reverie-brainstorming-img');
+    if (reverieImg) {
+        reverieImg.src = currentLang === 'en' ? 'reverie-roadmap-english.png' : 'reverie_brainstorming.png';
+    }
+
+    // Update Reverie main features image by language
+    const mainfeaturesImg = document.getElementById('reverie-mainfeatures-img');
+    if (mainfeaturesImg) {
+        mainfeaturesImg.src = currentLang === 'en' ? 'fourfunctions-english.png' : 'fourfunctions-japanese.png';
+    }
+
+    // Update NextScore hero thumbnail by language
+    const nextscoreThumb = document.getElementById('nextscore-thumbnail-img');
+    if (nextscoreThumb) {
+        nextscoreThumb.src = currentLang === 'en' ? 'nextscore_thumbnail_eng.png' : 'nextscore_thumbnail.png';
+    }
+
+    // Update NextScore features image by language
+    const nextscoreFeaturesImg = document.getElementById('nextscore-features-img');
+    if (nextscoreFeaturesImg) {
+        nextscoreFeaturesImg.src = currentLang === 'en' ? 'nextscore_features_eng.png' : 'nextscore_features.png';
+    }
 }
 
 // Function to update language toggle button
@@ -383,6 +414,7 @@ function updateLangToggle() {
 document.addEventListener('DOMContentLoaded', () => {
     updatePageContent();
     updateLangToggle();
+    // Reverie image is updated inside updatePageContent()
     
     // Add click event to language toggle button
     const langToggle = document.getElementById('lang-toggle');
