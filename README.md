@@ -144,16 +144,10 @@ The portfolio includes projects in two main categories:
 
 ## 🚀 Deployment
 
-### Live on GitHub Pages
-The repo uses GitHub Actions to deploy to **GitHub Pages** on every push to `main` or `master`.
-
-1. In the repo: **Settings → Pages**
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**
-3. Push to `main` (or `master`). After the workflow runs, the site is live at:
-   - **`https://<username>.github.io/<repository-name>/`**
-4. Use **relative paths** for all links and assets (e.g. `index.html`, `styles.css`, `IMG_8130.JPG`) so the site works at that base URL.
-
-A custom **404.html** redirects missing URLs to the homepage.
+### Option 1: GitHub Pages
+1. Push files to a GitHub repository
+2. Enable GitHub Pages in repository settings
+3. Your portfolio will be live at `username.github.io/repository-name`
 
 ### Option 2: Netlify
 1. Drag and drop the folder to Netlify
