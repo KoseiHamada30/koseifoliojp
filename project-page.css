@@ -1,5 +1,30 @@
 /* Project Page Specific Styles */
 
+/*
+ * Hero strip: fluid width (100% of viewport/parent); height follows intrinsic aspect ratio.
+ */
+ .project-hero-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #1a1a1a;
+    line-height: 0;
+}
+
+/* Fluid to body width — do not use HTML width/height on this img (forces intrinsic px width in some UAs). */
+.project-hero-image > img.project-hero-img {
+    display: block;
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-width: 0;
+    aspect-ratio: 1519 / 832;
+}
+
 /* Project Hero Section */
 .project-hero {
     min-height: 100vh;
@@ -22,23 +47,8 @@
     transform: translateY(0);
 }
 
-/* Challenge Section Layout */
-.challenge-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 7rem 2rem 7rem 2rem;
-}
-
 /* Project Overview Section */
 .overview-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10rem;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 0 2rem;
 }
 
@@ -46,12 +56,6 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.overview-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
 }
 
 .overview-subtitle {
@@ -74,11 +78,6 @@
 
 /* Initial Observation Section */
 .observation-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10rem;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 0 2rem;
 }
 
@@ -86,13 +85,6 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.observation-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    text-align: left;
 }
 
 .observation-subtitle {
@@ -115,11 +107,6 @@
 
 /* User Research Section */
 .research-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10rem;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 0 2rem;
 }
 
@@ -130,13 +117,6 @@
     position: sticky;
     top: 8rem;
     align-self: start;
-}
-
-.research-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    text-align: left;
 }
 
 .research-subtitle {
@@ -201,17 +181,40 @@
     text-align: left;
 }
 
-/* Design Process Section */
-.design-container {
+/*
+ * All case-study two-column sections: same track widths so every *-right column
+ * (challenge, observation, research, design, ui, results, …) measures the same.
+ */
+.challenge-container,
+.overview-container,
+.observation-container,
+.research-container,
+.design-container,
+.ui-container,
+.results-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10rem;
-    max-width: 1200px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr);
+    gap: clamp(2.5rem, 5vw, 7rem);
+    max-width: min(1280px, 100%);
     margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.challenge-container {
+    padding: 7rem 2rem;
+}
+
+.overview-container,
+.observation-container,
+.research-container,
+.design-container,
+.ui-container,
+.results-container {
     padding: 0 2rem;
 }
 
-.design-left {
+.design-left,
+.ui-left {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -220,11 +223,21 @@
     align-self: start;
 }
 
-.design-right {
+.challenge-right,
+.observation-right,
+.research-right,
+.results-right,
+.overview-right,
+.design-right,
+.ui-right {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     text-align: left;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .design-subtitle {
@@ -259,13 +272,22 @@
     text-align: left;
 }
 
+/* Stack title + body (overrides index styles.css row flex on .process-step) */
+.design-container .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin-bottom: 0;
+}
+
 .process-step h4 {
     font-size: 1.2rem;
     font-weight: 600;
     color: #1a1a1a;
     margin: 0 0 0.5rem 0;
     text-align: left;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .process-step p {
@@ -276,31 +298,6 @@
     text-align: left;
     text-indent: 0;
     padding-left: 0;
-}
-
-/* UI Design Section */
-.ui-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-.ui-left {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: sticky;
-    top: 8rem;
-    align-self: start;
-}
-
-.ui-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    text-align: left;
 }
 
 .ui-subtitle {
@@ -323,6 +320,13 @@
 /* User Flow Styles */
 .user-flow-section {
     margin-bottom: 1rem;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-sizing: border-box;
 }
 
 .flow-title {
@@ -431,6 +435,114 @@
         gap: 1rem;
     }
 }
+
+/*
+ * Figma prototype (Circula): full-width embed — space for Flows sidebar + device frame (show-proto-sidebar in URL).
+ */
+.user-flow-prototype-wrap {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: clamp(420px, 58vw, 720px);
+    align-self: stretch;
+    flex: 0 0 auto;
+    margin: 1.5rem 0 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f5;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+    .user-flow-prototype-wrap {
+        height: clamp(480px, 85vh, 720px);
+    }
+}
+
+iframe.user-flow-figma-iframe,
+.user-flow-prototype-wrap iframe.user-flow-figma-iframe,
+#circula-figma-discover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
+    border: none !important;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+/*
+ * List view screen recording (.mov)
+ *
+ * In a column flex layout, align-self:center + width that browsers treat as indefinite
+ * lets the flex item size to max-content = the video’s intrinsic width (often 1000px+),
+ * so max-width on the wrapper is ignored. Fix: definite width in px + max-width:100%,
+ * min-width:0, and clip the section.
+ */
+#circula-flow-list-view,
+#circula-flow-club-search {
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+#circula-flow-list-view .user-flow-video-wrap,
+#circula-flow-club-search .user-flow-video-wrap {
+    position: relative;
+    box-sizing: border-box;
+    width: 180px;
+    max-width: 100%;
+    flex: 0 1 auto;
+    min-width: 0;
+    margin: 1.5rem auto 0;
+    align-self: center;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0a0a0a;
+}
+
+#circula-listview-video,
+#circula-clubsearch-video {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    vertical-align: top;
+    object-fit: contain;
+}
+
+/* Slightly wider max on small phones (readable); still capped by column */
+@media (max-width: 480px) {
+    #circula-flow-list-view .user-flow-video-wrap,
+    #circula-flow-club-search .user-flow-video-wrap {
+        width: 160px;
+    }
+}
+
+/* Scale up modestly with viewport while staying a “phone strip” on large screens */
+@media (min-width: 900px) {
+    #circula-flow-list-view .user-flow-video-wrap,
+    #circula-flow-club-search .user-flow-video-wrap {
+        width: 200px;
+        max-width: min(200px, 38%);
+    }
+}
+
+@media (min-width: 1200px) {
+    #circula-flow-list-view .user-flow-video-wrap,
+    #circula-flow-club-search .user-flow-video-wrap {
+        width: 220px;
+        max-width: min(220px, 36%);
+    }
+}
+
 
 /* Inline Prototype Styles */
 .inline-prototype {
@@ -557,16 +669,7 @@
     margin: 0;
 }
 
-/* Final Results Section */
-.results-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 10rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
+/* Final Results Section (grid shared with .challenge-container, …) */
 .results-left {
     display: flex;
     flex-direction: column;
@@ -574,13 +677,6 @@
     position: sticky;
     top: 8rem;
     align-self: start;
-}
-
-.results-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    text-align: left;
 }
 
 .results-subtitle {
@@ -615,6 +711,13 @@
     margin: 0 0 1rem 0;
 }
 
+.key-insights .ongoing-lead {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+    margin: 0 0 1rem 0;
+}
+
 .key-insights ul {
     font-size: 1rem;
     line-height: 1.5;
@@ -625,6 +728,45 @@
 
 .key-insights li {
     margin-bottom: 0.5rem;
+}
+
+.key-insights .sus-chart-caption,
+.key-insights .sus-chart-footnote {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #666;
+    margin: 0;
+}
+
+.key-insights .sus-chart-caption {
+    margin-bottom: 0.35rem;
+}
+
+.key-insights .sus-chart-footnote {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+}
+
+:root {
+    --sus-chart-text: #555;
+    --sus-chart-bar: rgba(26, 26, 26, 0.88);
+}
+
+.sus-chart-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0.85rem 0 0.25rem;
+    /* Height comes from Chart.js (maintainAspectRatio); avoid fixed px so it scales with column width */
+    min-height: 0;
+}
+
+@media (max-width: 768px) {
+    .sus-chart-wrap {
+        margin-left: -0.25rem;
+        margin-right: -0.25rem;
+        width: calc(100% + 0.5rem);
+    }
 }
 
 .next-steps {
@@ -652,13 +794,6 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.challenge-right {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    text-align: left;
 }
 
 .challenge-subtitle {
@@ -841,6 +976,10 @@
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+
+.project-description p + p {
+    margin-top: 1.25em;
 }
 
 .project-meta {
@@ -1144,4 +1283,3 @@
         font-size: clamp(3rem, 12vw, 6rem);
     }
 }
-

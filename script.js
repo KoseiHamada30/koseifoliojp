@@ -422,5 +422,89 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize fade up animation
     initFadeUpAnimation();
 
-    console.log('Portfolio loaded successfully! 🚀');
+
+    // Circula: muted flow clips — autoplay when center is on screen (list view + club search).
+    function initCirculaMutedViewportVideo(videoId, blockId) {
+        var video = document.getElementById(videoId);
+        var block = document.getElementById(blockId);
+        if (!video || !block) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        video.defaultMuted = true;
+        video.muted = true;
+        video.setAttribute("muted", "");
+        video.setAttribute("playsinline", "");
+        if ("playsInline" in video) {
+            video.playsInline = true;
+        }
+
+        function videoCenterInViewport() {
+            var r = video.getBoundingClientRect();
+            if (r.width < 2 || r.height < 2) return false;
+            var cx = r.left + r.width / 2;
+            var cy = r.top + r.height / 2;
+            var vw = window.innerWidth;
+            var vh = window.innerHeight;
+            return cx >= 0 && cx <= vw && cy >= 0 && cy <= vh;
+        }
+
+        function blockCenterInViewport() {
+            var b = block.getBoundingClientRect();
+            var cx = b.left + b.width / 2;
+            var cy = b.top + b.height / 2;
+            var vw = window.innerWidth;
+            var vh = window.innerHeight;
+            return cx >= 0 && cx <= vw && cy >= 0 && cy <= vh;
+        }
+
+        function shouldBePlaying() {
+            if (videoCenterInViewport()) return true;
+            var r = video.getBoundingClientRect();
+            if ((r.width < 2 || r.height < 2) && blockCenterInViewport()) return true;
+            return false;
+        }
+
+        function sync() {
+            video.muted = true;
+            if (shouldBePlaying()) {
+                var p = video.play();
+                if (p !== undefined && typeof p.then === "function") {
+                    p.catch(function() {});
+                }
+            } else {
+                video.pause();
+            }
+        }
+
+        var thresholds = [];
+        for (var i = 0; i <= 20; i++) thresholds.push(i / 20);
+
+        var io = new IntersectionObserver(function() {
+            sync();
+        }, { threshold: thresholds });
+        io.observe(video);
+        io.observe(block);
+
+        var ticking = false;
+        window.addEventListener("scroll", function() {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function() {
+                ticking = false;
+                sync();
+            });
+        }, { passive: true });
+        window.addEventListener("resize", sync);
+
+        ["loadedmetadata", "loadeddata", "canplay", "canplaythrough"].forEach(function(ev) {
+            video.addEventListener(ev, sync);
+        });
+
+        sync();
+    }
+
+    initCirculaMutedViewportVideo("circula-listview-video", "circula-flow-list-view");
+    initCirculaMutedViewportVideo("circula-clubsearch-video", "circula-flow-club-search");
+
+    console.log("Portfolio loaded successfully! 🚀");
 });

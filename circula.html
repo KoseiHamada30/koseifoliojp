@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circula - Kosei Hamada</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project-page.css?v=clubsearchvid1">
+    <!-- List view video: scoped here so sizing always applies (flex max-content + cached CSS issues). -->
+    <style id="circula-user-flow-media-layout">
+        #circula-flow-list-view,
+        #circula-flow-club-search {
+            min-width: 0 !important;
+            overflow-x: hidden !important;
+        }
+        #circula-flow-list-view .user-flow-video-wrap,
+        #circula-flow-club-search .user-flow-video-wrap {
+            position: relative !important;
+            box-sizing: border-box !important;
+            width: 180px !important;
+            max-width: 100% !important;
+            flex: 0 1 auto !important;
+            min-width: 0 !important;
+            margin: 1.5rem auto 0 !important;
+            align-self: center !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            background: #0a0a0a !important;
+        }
+        #circula-listview-video,
+        #circula-clubsearch-video {
+            display: block !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            height: auto !important;
+            object-fit: contain !important;
+        }
+        @media (max-width: 480px) {
+            #circula-flow-list-view .user-flow-video-wrap,
+            #circula-flow-club-search .user-flow-video-wrap {
+                width: 160px !important;
+            }
+        }
+        @media (min-width: 900px) {
+            #circula-flow-list-view .user-flow-video-wrap,
+            #circula-flow-club-search .user-flow-video-wrap {
+                width: 200px !important;
+                max-width: min(200px, 38%) !important;
+            }
+        }
+        @media (min-width: 1200px) {
+            #circula-flow-list-view .user-flow-video-wrap,
+            #circula-flow-club-search .user-flow-video-wrap {
+                width: 220px !important;
+                max-width: min(220px, 36%) !important;
+            }
+        }
+
+        /*
+         * Discover Figma — full prototype player: wide frame so Flows sidebar + device preview fit
+         * (matches Figma’s default embed, not a narrow phone strip).
+         */
+        #circula-discover-figma-wrap {
+            position: relative !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+            height: clamp(420px, 58vw, 720px) !important;
+            flex: 0 0 auto !important;
+            margin: 1.5rem 0 0 !important;
+            align-self: stretch !important;
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            background: #f5f5f5 !important;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
+        }
+        @media (max-width: 768px) {
+            #circula-discover-figma-wrap {
+                height: clamp(480px, 85vh, 720px) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-name">Kosei Hamada</div>
+                <div class="brand-title">UX Designer</div>
+            </div>
+            <div class="nav-pill">
+                <a href="index.html" class="pill-item">Work¹</a>
+                <a href="info.html" class="pill-item">Info²</a>
+            </div>
+            <div class="nav-lang">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                    <span class="lang-text">EN</span>
+                </button>
+            </div>
+            <div class="nav-cta">
+                <a href="#footer" class="cta-link" data-i18n="contact" style="transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);">• 連絡する</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero Image -->
+    <section class="project-hero-image">
+        <img class="project-hero-img" src="circula_frontpage.png" alt="Circula App" decoding="async" fetchpriority="high" style="width:100%;max-width:100%;height:auto;display:block">
+    </section>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="project-hero-content">
+            <div class="project-subtitle fade-up">
+                <h2 data-i18n="circula-hero-subtitle">キャンパスでの瞬間を、見逃さない。</h2>
+            </div>
+            <div class="project-description fade-up">
+                <p data-i18n="circula-hero-desc-1">Circulaは、大学内のクラブ活動やイベント情報を一元化し、リアルタイムで可視化するキャンパスマップ体験です。</p>
+                <p data-i18n="circula-hero-desc-2">バラバラなグループチャットや掲示を追いかけなくても、「今、何があるか」を把握し、参加したい機会を見逃さず学内生活を最大化できることを目指しています。</p>
+            </div>
+            <div class="project-meta fade-up">
+                <div class="meta-item">
+                    <span class="meta-label" data-i18n="circula-meta-type">タイプ</span>
+                    <span class="meta-value" data-i18n="circula-meta-type-value">アプリ／Webデザイン</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label" data-i18n="circula-meta-duration">期間</span>
+                    <span class="meta-value" data-i18n="circula-meta-duration-value">継続中</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label" data-i18n="circula-meta-role">自分の役割</span>
+                    <span class="meta-value" data-i18n="circula-meta-role-value">UX designer / UX researcher</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label" data-i18n="circula-meta-tools">ツール</span>
+                    <span class="meta-value" data-i18n="circula-meta-tools-value">Figma / Cursor / Framer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Image Section -->
+    <section class="project-image-section">
+        <img src="Slide 4_3 - 1.png" alt="Circula design" style="width: 100%; height: auto; object-fit: cover;">
+    </section>
+
+    <!-- Challenge Section -->
+    <section class="project-section">
+        <div class="challenge-container">
+            <div class="challenge-left">
+                <div class="section-number">(01)</div>
+                <h2 class="section-title" data-i18n="challenge">課題</h2>
+            </div>
+            <div class="challenge-right">
+                <h3 class="challenge-subtitle fade-up" style="margin-top: 3rem;" data-i18n="circula-challenge-title">キャンパス情報がバラバラ</h3>
+                <p class="fade-up" data-i18n="circula-challenge-desc">イベントやサークル情報はSNS、メール購読、口コミに分散していて、キャンパスで「今、何が起きているか」を一目で把握しづらい状況でした。団体ごとにチケット取得や登録の手続きも異なり、その摩擦が機会を逃す原因となり、特に一年生や留学生にとって新しいコミュニティに入りにくさにつながっていました。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Observation Section -->
+    <section class="project-section">
+        <div class="observation-container">
+            <div class="observation-left">
+                <div class="section-number">(02)</div>
+                <h2 class="section-title" data-i18n="discovery">課題発見</h2>
+            </div>
+            <div class="observation-right">
+                <h3 class="observation-subtitle fade-up" style="margin-top: 3rem;" data-i18n="circula-discovery-title">「知るタイミング」が遅い</h3>
+                <p class="fade-up" data-i18n="circula-discovery-desc-1">学生インタビューと観察から、多くの人が「後から知った」経験を共有していました。情報そのものより、発見のしやすさと信頼できる一覧性がボトルネックだと整理しました。</p>
+                <p class="fade-up"><span data-i18n="circula-discovery-desc-2">そこで</span><b style="font-size: 1.5rem;" data-i18n="circula-discovery-desc-3">マップ上でこれからのイベントを見せる</b><span data-i18n="circula-discovery-desc-4">体験に集中してデザインすることにしました。</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="project-section" style="padding: 5rem 0">
+        <div class="research-container">
+            <div class="research-left">
+                <div class="section-number">(03)</div>
+                <h2 class="section-title" data-i18n="research">初期ユーザーリサーチ</h2>
+            </div>
+            <div class="research-right">
+                <h3 class="research-subtitle fade-up" style="margin-top: 3rem;" data-i18n="circula-research-title">キャンパスでの情報行動</h3>
+                <div class="research-content fade-up">
+                    <h4 class="research-section-title" data-i18n="circula-research-survey-title">①アンケート・軽量リサーチ</h4>
+                    <ul class="research-list">
+                        <li><b data-i18n="circula-research-survey-1">情報源</b>: <span data-i18n="circula-research-survey-1-desc">InstagramやDiscord、メールが混在し、公式チャネルだけでは追いきれないという声が多くありました。</span></li>
+                        <li><b data-i18n="circula-research-survey-2">参加の障壁</b>: <span data-i18n="circula-research-survey-2-desc">学生の63%が、場所が分からないことや、イベントが誰にでも開かれているか不安だと答えました。</span></li>
+                        <li><b data-i18n="circula-research-survey-3">見逃した重要なイベント</b>: <span data-i18n="circula-research-survey-3-desc">初期リサーチ参加者の95%が、本当は参加したかったのに見逃したイベントがあると答えました。</span></li>
+                    </ul>
+                </div>
+                <div class="research-content fade-up">
+                    <h4 class="research-section-title" data-i18n="circula-research-interview-title">②インタビューからの示唆</h4>
+                    <ul class="research-list">
+                        <li><b data-i18n="circula-research-interview-1">欲しい体験</b>: <span data-i18n="circula-research-interview-1-desc">「今このエリアで何があるか」を一目で知り、興味のあるイベントにすぐ飛べる導線を求めていました。</span></li>
+                        <li><b data-i18n="circula-research-interview-2">運営側のニーズ</b>: <span data-i18n="circula-research-interview-2-desc">サークル側も、届けたい層にリーチしやすい掲載・更新フローを重視していました。</span></li>
+                        <li><b data-i18n="circula-research-interview-3">登録の手続き</b>: <span data-i18n="circula-research-interview-3-desc">イベントごとに登録方法が異なるため、学生は慣れないイベントへの参加の仕方に戸惑いを感じていました。</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is this app Section -->
+    <section class="project-section">
+        <div class="observation-container">
+            <div class="observation-left">
+                <div class="section-number">(04)</div>
+                <h2 class="section-title">What is this app?</h2>
+            </div>
+            <div class="observation-right">
+                <h3 class="observation-subtitle fade-up" style="margin-top: 3rem;" data-i18n="circula-whatis-title">イベントとサークルが、このアプリひとつで</h3>
+                <p class="fade-up" data-i18n="circula-whatis-desc">クラブ活動とイベントをマップ上に集約し、リアルタイムで状況を把握できるようにすることで、学生が参加したい機会を見逃さず、学内生活を最大化できる体験を目指しています。</p>
+            </div>
+        </div>
+        <img src="circula_features.png" alt="Circula features" style="width: 68%; max-width: 600px; height: auto; object-fit: cover; margin: 4rem auto 0 auto; display: block; padding-bottom: 0rem;">
+    </section>
+
+    <!-- Design Section -->
+    <section class="project-section">
+        <div class="design-container">
+            <div class="design-left">
+                <div class="section-number">(05)</div>
+                <h2 class="section-title" data-i18n="visual-design">ビジュアルデザイン</h2>
+            </div>
+            <div class="design-right">
+                <h3 class="design-subtitle fade-up" style="margin-top: 3rem;" data-i18n="circula-design-title">モバイルアプリでのイベント／サークル発見体験</h3>
+                <div class="process-steps fade-up">
+                    <div class="process-step fade-up">
+                        <h4 data-i18n="circula-design-2-title">1. マップとリストの両方</h4>
+                        <p data-i18n="circula-design-2-desc">地理的な発見と、条件で絞り込む探索の両方に対応できるUIを意識しました。</p>
+                    </div>
+                    <div class="process-step fade-up">
+                        <h4 data-i18n="circula-design-1-title">2. スキャンしやすい階層</h4>
+                        <p data-i18n="circula-design-1-desc">イベントカード、時間・場所・主催を一貫したパターンで提示し、移動中でも判断しやすくしました。</p>
+                    </div>
+                    <div class="process-step fade-up">
+                        <h4 data-i18n="circula-design-3-title">3. 直感的な検索</h4>
+                        <p data-i18n="circula-design-3-desc">条件の絞り込みや検索の導線を整理し、どの操作から始めればよいか迷いにくいよう繰り返し調整しました。</p>
+                    </div>
+                </div>
+                <img src="circula_screen.png" alt="Circula screens" style="width: 100%; height: auto; border-radius: 20px; display: block; margin-left: auto; margin-right: auto; margin-top: 2rem;" class="fade-up">
+            </div>
+        </div>
+    </section>
+
+    <!-- UI Section -->
+    <section class="project-section">
+        <div class="ui-container">
+            <div class="ui-left">
+                <div class="section-number">(06)</div>
+                <h2 class="section-title" data-i18n="ux-experience">UX体験</h2>
+            </div>
+            <div class="ui-right">
+                <h3 class="ui-subtitle fade-up" style="margin-top: 3rem;" data-i18n="circula-ux-title">主要なユーザーフロー</h3>
+                <div class="user-flow-section fade-up">
+                    <h4 class="flow-title" data-i18n="circula-ux-flow1-title">周辺のイベントを発見</h4>
+                    <p class="flow-description" data-i18n="circula-ux-flow1-desc">マップビューから近くの活動を探し、日時・場所などの詳細を開いて確認し、アプリから登録できるようにする想定です。</p>
+                    <div id="circula-discover-figma-wrap" class="user-flow-prototype-wrap">
+                        <iframe id="circula-figma-discover"
+                            class="user-flow-figma-iframe"
+                            title="Circula prototype — discover nearby events"
+                            loading="lazy"
+                            allowfullscreen
+                            width="390"
+                            height="740"
+                            src="https://embed.figma.com/proto/i4Be5dEw21Ri8qVUCt9bTE/Mobile-Design?node-id=1044-5836&amp;scaling=scale-down&amp;content-scaling=responsive&amp;device-frame=true&amp;footer=true&amp;show-proto-sidebar=true&amp;viewport-controls=true&amp;starting-point-node-id=1044%3A5836&amp;page-id=0%3A1&amp;embed-host=share"></iframe>
+                    </div>
+                </div>
+                <div id="circula-flow-list-view" class="user-flow-section fade-up" style="margin-top: 4rem;">
+                    <h4 class="flow-title" data-i18n="circula-ux-flow-list-title">リストビューでサッと探す</h4>
+                    <p class="flow-description" data-i18n="circula-ux-flow-list-desc">リストではこれからのイベントを時系列で表示し、「近日何があるか」を探したいときに並べ替えやフィルターで絞り込めます。詳細や登録の導線はマップビューと同じです。</p>
+                    <div class="user-flow-video-wrap">
+                        <video id="circula-listview-video" class="user-flow-inline-video" src="listview.mov" muted playsinline webkit-playsinline autoplay loop preload="auto" aria-label="List view demo video"></video>
+                    </div>
+                </div>
+                <div id="circula-flow-club-search" class="user-flow-section fade-up" style="margin-top: 4rem;">
+                    <h4 class="flow-title" data-i18n="circula-ux-flow2-title">好きなサークルを見つける</h4>
+                    <p class="flow-description" data-i18n="circula-ux-flow2-desc">マップからサークルを探索し、詳細を開いて比較し、気になる団体を保存してあとから見返せる導線を設計しました。</p>
+                    <div class="user-flow-video-wrap">
+                        <video id="circula-clubsearch-video" class="user-flow-inline-video" src="clubsearch.mov" muted playsinline webkit-playsinline autoplay loop preload="auto" aria-label="Circula club search and save flow"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ongoing research Section -->
+    <section class="project-section">
+        <div class="results-container">
+            <div class="results-left">
+                <div class="section-number">(07)</div>
+                <h2 class="section-title" data-i18n="circula-ongoing-section">継続中のリサーチ</h2>
+            </div>
+            <div class="results-right">
+                <p class="fade-up" data-i18n="circula-ongoing-intro">今後のアップデートに向けて、ターゲットユーザー20名以上からフィードバックを継続的に集めています。インタビューや軽いユーザビリティ確認に加え、利用後のアンケートで定性的・定量的な両面から学びを蓄積します。</p>
+                <div class="key-insights fade-up">
+                    <h4 data-i18n="circula-ongoing-qual-heading">アップデートで優先するフィードバック（定性）</h4>
+                    <p class="ongoing-lead" data-i18n="circula-ongoing-qual-lead">新機能の方向性を決めるうえで、いま注目しているテーマです。</p>
+                    <ul>
+                        <li data-i18n="circula-ongoing-qual-1">「このアプリ上で友人や他の参加者と交流したい」という声。</li>
+                        <li data-i18n="circula-ongoing-qual-2">「検索バーがキーワードからもっと関連性の高い候補を提案してほしい」という要望。</li>
+                        <li data-i18n="circula-ongoing-qual-3">「プロフィールページをもっと自由にパーソナライズしたい」という声。</li>
+                    </ul>
+                </div>
+                <div class="key-insights fade-up">
+                    <h4 data-i18n="circula-ongoing-quant-heading">アンケートからの定量データ（利用後）</h4>
+                    <p class="ongoing-lead" data-i18n="circula-ongoing-quant-lead">利用後の簡易アンケートでは、SUS（System Usability Scale／システム使用性尺度）に加え、満足度やタスク成功の自己評価などの定量指標を追跡しています。</p>
+                    <p class="sus-chart-caption" data-i18n="circula-sus-chart-caption">提出された10件の回答から、各設問の平均スコア（1＝強く反対〜5＝強く賛成）を可視化しています。</p>
+                    <div class="sus-chart-wrap">
+                        <canvas id="sus-results-chart" role="img" aria-label="SUS questionnaire mean scores by item"></canvas>
+                    </div>
+                    <p class="sus-chart-footnote" data-i18n="circula-sus-chart-footnote">✳はSUSで逆転させる項目（否定的な文）です。グラフの生スコアが低いほど、複雑さ・負担の体感は小さいことを意味します。最後の設問は尺度に加えたフォロー用の追加質問です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="project-section">
+        <div class="results-container">
+            <div class="results-left">
+                <div class="section-number">(08)</div>
+                <h2 class="section-title" data-i18n="future">今後の展望</h2>
+            </div>
+            <div class="results-right">
+                <h3 class="results-subtitle fade-up" data-i18n="circula-future-title">振り返りと次のステップ</h3>
+                <div class="key-insights fade-up">
+                    <h4 data-i18n="circula-future-like-title">好き・得意と感じたところ：</h4>
+                    <ul>
+                        <li data-i18n="circula-future-like-1">リサーチに基づいてUIの視認性と導線を磨き込むプロセス</li>
+                        <li data-i18n="circula-future-like-2">モバイルとWebを横断した一貫したデザインシステムの整理</li>
+                        <li data-i18n="circula-future-like-3">学生向けプロダクトのペースで素早くプロトタイプを回すこと</li>
+                    </ul>
+                </div>
+                <div class="key-insights fade-up">
+                    <h4 data-i18n="circula-future-next-title">今後していくこと：</h4>
+                    <ul>
+                        <li data-i18n="circula-future-next-1">ユーザビリティテストの継続と計測に基づく改善</li>
+                        <li data-i18n="circula-future-next-2">運営・サークル向けの更新フローのさらなる単純化</li>
+                        <li data-i18n="circula-future-next-3">通知やパーソナライズの設計（プライバシーを踏まえて）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <section class="connect-section">
+            <div class="connect-content">
+                <div class="connect-text">
+                    <span>LET'S CONNECT</span>
+                    <span>LET'S CONNECT</span>
+                    <span>LET'S CONNECT</span>
+                    <span>LET'S CONNECT</span>
+                    <span>LET'S CONNECT</span>
+                    <span>LET'S CONNECT</span>
+                    <span>LET'S CONNECT</span>
+                    <span>LET'S CONNECT</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="mailto:khamada@student.unimelb.edu.au" class="footer-link">
+                    <span class="footer-bullet">•</span>
+                    <span class="footer-text">khamada@student.unimelb.edu.au</span>
+                </a>
+            </div>
+            <div class="footer-center">
+                <a href="https://drive.google.com/file/d/1CrWoSxvAn8ABei2tWH5UEiZowBDO4jnX/view?usp=sharing" class="footer-link" target="_blank">
+                    <span class="footer-bullet">•</span>
+                    <span class="footer-text" data-i18n="resume">レジュメを見る</span>
+                </a>
+            </div>
+            <div class="footer-right">
+                <p class="footer-copyright">© Kosei Hamada 2025</p>
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@kosei_beproductiv?is_from_webapp=1&sender_device=pc" class="social-link" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M19.59 9.17a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.6z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kosei-hamada/" class="social-link" target="_blank">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect width="4" height="12" x="2" y="9"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:khamada@student.unimelb.edu.au" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="script.js"></script>
+    <script src="i18n.js"></script>
+    <script src="sus-results-chart.js"></script>
+</body>
+</html>
