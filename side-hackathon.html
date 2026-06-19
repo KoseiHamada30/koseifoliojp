@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SheSaidK - Kosei Hamada</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project-page.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-name">Kosei Hamada</div>
+                <div class="brand-title">UX Designer</div>
+            </div>
+            <div class="nav-pill">
+                <a href="index.html" class="pill-item active">Work¹</a>
+                <a href="info.html" class="pill-item">Info²</a>
+            </div>
+            <div class="nav-lang">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                    <span class="lang-text">EN</span>
+                </button>
+            </div>
+            <div class="nav-cta">
+                <a href="index.html#footer" class="cta-link" data-i18n="contact">• 連絡する</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-hero" style="padding-top: 8rem;">
+        <div class="project-hero-content">
+            <div class="project-subtitle fade-up">
+                <h2>SheSaidK - <span data-i18n="shesaidk-subtitle">personal chat grader</span></h2>
+            </div>
+            <div class="project-description fade-up">
+                <p data-i18n="shesaidk-page-desc">A personal hackathon project—a chat grader built as a weekend side build, lighter than my featured case studies. Full write-up coming soon.</p>
+            </div>
+            <p class="fade-up" style="margin-top: 2rem;"><a href="index.html#work" class="intro-cta" data-i18n="back-to-work">• Back to work</a></p>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <section class="connect-section">
+            <div class="connect-content">
+                <div class="connect-text">
+                    <span>LET'S CONNECT</span>
+                    <span>LET'S CONNECT</span>
+                    <span>LET'S CONNECT</span>
+                    <span>LET'S CONNECT</span>
+                </div>
+            </div>
+        </section>
+        <div class="footer-content">
+            <div class="footer-left">
+                <a href="mailto:khamada@student.unimelb.edu.au" class="footer-link">
+                    <span class="footer-bullet">•</span>
+                    <span class="footer-text">khamada@student.unimelb.edu.au</span>
+                </a>
+            </div>
+            <div class="footer-center">
+                <a href="https://drive.google.com/file/d/1CrWoSxvAn8ABei2tWH5UEiZowBDO4jnX/view?usp=sharing" class="footer-link" target="_blank">
+                    <span class="footer-bullet">•</span>
+                    <span class="footer-text" data-i18n="resume">レジュメを見る</span>
+                </a>
+            </div>
+            <div class="footer-right">
+                <p class="footer-copyright">© Kosei Hamada 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="i18n.js"></script>
+</body>
+</html>

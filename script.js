@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Enhanced project card hover effects
-    const projectCards = document.querySelectorAll('.project-card');
+    // Enhanced project card hover effects (featured work only)
+    const projectCards = document.querySelectorAll('.project-card:not(.project-card--secondary)');
     projectCards.forEach((card, index) => {
         // Staggered animation on load
         card.style.animationDelay = `${index * 0.1}s`;
@@ -505,6 +505,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initCirculaMutedViewportVideo("circula-listview-video", "circula-flow-list-view");
     initCirculaMutedViewportVideo("circula-clubsearch-video", "circula-flow-club-search");
+
+    // Expand / collapse secondary work on homepage
+    const exploreToggle = document.querySelector(".explore-more-toggle");
+    const workMorePanel = document.getElementById("work-more-panel");
+
+    if (exploreToggle && workMorePanel) {
+        exploreToggle.addEventListener("click", function() {
+            const isOpen = workMorePanel.classList.toggle("is-open");
+            exploreToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+
+            if (isOpen) {
+                requestAnimationFrame(function() {
+                    workMorePanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                });
+            }
+        });
+    }
 
     console.log("Portfolio loaded successfully! 🚀");
 });

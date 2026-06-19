@@ -617,6 +617,131 @@ p {
     margin: 0;
 }
 
+/* Explore more — secondary work */
+.work-explore {
+    margin-top: 5rem;
+    text-align: left;
+}
+
+.explore-more-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #1a1a1a;
+    transition: color 0.3s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.explore-more-toggle::before {
+    content: '•';
+    margin-right: 0.15rem;
+}
+
+.explore-more-toggle:hover {
+    color: #666;
+    transform: translateX(5px);
+}
+
+.explore-more-chevron {
+    display: inline-block;
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.explore-more-toggle[aria-expanded="true"] .explore-more-chevron {
+    transform: rotate(180deg);
+}
+
+.work-more-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition:
+        grid-template-rows 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+        margin-top 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 0;
+}
+
+.work-more-panel.is-open {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 3.5rem;
+}
+
+.work-more-panel-inner {
+    overflow: hidden;
+}
+
+.projects-grid--secondary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+.project-item--secondary:hover {
+    transform: none;
+}
+
+.project-card--secondary {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+.project-card--secondary:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.14);
+}
+
+.project-title--secondary {
+    font-size: clamp(1rem, 0.9vw + 0.75rem, 1.35rem);
+    line-height: 1.35;
+}
+
+.project-item--secondary .project-category {
+    font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .projects-grid--secondary {
+        gap: 1.25rem;
+    }
+
+    .project-item--secondary .project-category {
+        font-size: 0.9rem;
+    }
+}
+
+.project-image--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    background: linear-gradient(135deg, #ececec 0%, #f5f5f5 100%);
+    border-radius: 12px;
+}
+
+.project-image--placeholder .project-thumbnail {
+    display: none;
+}
+
+.project-image--placeholder::after {
+    content: '';
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    opacity: 0.5;
+}
+
 
 /* About Section */
 .about {
@@ -1563,6 +1688,20 @@ p {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 0 0.5rem;
+    }
+
+    .projects-grid--secondary {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 100%;
+    }
+
+    .explore-more-toggle {
+        font-size: 1.25rem;
+    }
+
+    .work-more-panel.is-open {
+        margin-top: 2.5rem;
     }
     
     .skills {
