@@ -1014,26 +1014,35 @@ iframe.user-flow-figma-iframe,
     font-style: normal;
 }
 
-/* Video Section */
-.video-section {
-    padding: 2rem 0 7rem 0;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.project-video {
-    width: 80%;
-    max-width: 800px;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Reverie routine mockups */
+/* Reverie routine mockups + stacked moodboard/video */
 .project1-image-section {
     padding-top: 1rem;
+}
+
+.project-stack-frame {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.project-stack-frame--first {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-stack-frame--last {
+    margin-bottom: 2rem;
+}
+
+.project-stack-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
 }
 
 /* Mockup Images Section */
