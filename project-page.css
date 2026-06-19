@@ -1031,6 +1031,11 @@ iframe.user-flow-figma-iframe,
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Reverie routine mockups */
+.project1-image-section {
+    padding-top: 1rem;
+}
+
 /* Mockup Images Section */
 .mockup-images-section {
     padding: 2rem 0 7rem 0;
