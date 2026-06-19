@@ -1016,33 +1016,53 @@ iframe.user-flow-figma-iframe,
 
 /* Reverie routine mockups + stacked moodboard/video */
 .project1-image-section {
-    padding-top: 1rem;
+    padding: 1rem 2rem 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
 }
 
-.project-stack-frame {
-    width: 80%;
+.project-feature-media {
+    display: block;
+    width: min(80%, 960px);
+    max-width: 100%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
-    aspect-ratio: 16 / 9;
+    object-fit: cover;
     border-radius: 30px;
-    overflow: hidden;
 }
 
-.project-stack-frame--first {
+.project-feature-media--first {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
-.project-stack-frame--last {
+.project-feature-media--between,
+.project-feature-media--last {
     margin-bottom: 2rem;
 }
 
-.project-stack-media {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 0;
+@media (max-width: 768px) {
+    .project1-image-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .project-feature-media {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .project-feature-media--first {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .project-feature-media--between,
+    .project-feature-media--last {
+        margin-bottom: 1.5rem;
+    }
 }
 
 /* Mockup Images Section */
