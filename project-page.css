@@ -1049,7 +1049,7 @@ iframe.user-flow-figma-iframe,
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 .mockup-image {
@@ -1061,24 +1061,22 @@ iframe.user-flow-figma-iframe,
     transition: transform 0.3s ease;
 }
 
-.mockup-image--full {
-    height: auto;
-    max-height: none;
-    object-fit: contain;
-    object-position: center top;
-}
-
 .mockup-image-wrap--night {
     overflow: hidden;
+    width: 100%;
+    height: 500px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .mockup-image-wrap--night .mockup-image--full {
-    width: 112%;
+    width: 115%;
+    height: 100%;
     max-width: none;
     display: block;
-    transform: translateX(7%);
+    object-fit: cover;
+    object-position: 44% center;
+    transform: translateX(6%);
     box-shadow: none;
     border-radius: 0;
 }
