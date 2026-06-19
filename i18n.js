@@ -247,6 +247,20 @@ const translations = {
         'reverie-ux-flow3-title': '💡 オンボーディング',
         'reverie-ux-flow3-desc': 'ユーザー情報を簡単に知ることでデモグラフィックを把握し、よりユーザーごとにあった睡眠の提案を提供します。',
         'reverie-ux-flow3-note': '（Flowsのタブは閉じてご覧ください）',
+        'reverie-lovable-section': 'Vibe Coding',
+        'reverie-lovable-title': 'Lovableで作ったインタラクティブWebアプリ',
+        'reverie-lovable-desc': 'Figmaプロトタイプの後、Lovable（vibe codingツール）を使ってReverieをクリック可能なWebアプリに実装しました。まずはAIの初回出力をベースに、デザイン意図に合わせてUI・コピー・フローを手直ししています。',
+        'reverie-lovable-outcome-title': '最終成果物',
+        'reverie-lovable-morning-label': 'Morning Routine',
+        'reverie-lovable-night-label': 'Night Routine',
+        'reverie-lovable-changes-title': 'Lovable初回出力から変更した点',
+        'reverie-lovable-changes-desc': '生成は速かったものの、睡眠アプリとしての体験とビジュアルに合わせるため、以下の点を修正しました。',
+        'reverie-lovable-change1-title': '1. 感情スケールのデザイン',
+        'reverie-lovable-change1-desc': 'ムードダイアルのインタラクションを調整しました。オリジナルデザインを完全に再現しつつ、視覚的に独自性を保つことは難しかったためです。',
+        'reverie-lovable-change2-title': '2. 時計機能',
+        'reverie-lovable-change2-desc': 'Figmaで作ったアニメーションはとても良かったものの、使いやすさを保ちながらコードで実装するのは非常に困難でした。',
+        'reverie-lovable-change3-title': '3. Continueボタンからスワイプ操作へ',
+        'reverie-lovable-change3-desc': '元のアニメーションのまま使いやすさを維持するのが難しかったため、ContinueボタンをInstagram Storiesのような画面間スワイプジェスチャーに置き換えました。',
         'reverie-review-title': 'プロジェクトの振り返りと今後の展望',
         'reverie-review-desc': '3日間のハッカソンという限られた時間の中で、ユーザーリサーチからプロトタイプまで一貫したデザインプロセスを実施できました。',
         'reverie-review-like-title': '好き・得意と感じたところ：',
@@ -505,6 +519,20 @@ const translations = {
         'reverie-ux-flow3-title': '💡 Onboarding',
         'reverie-ux-flow3-desc': 'By easily learning user information, we understand demographics and provide sleep suggestions tailored to each user.',
         'reverie-ux-flow3-note': '(Please close the Flows tab to view)',
+        'reverie-lovable-section': 'Vibe Coding',
+        'reverie-lovable-title': 'Interactive webapp built with Lovable',
+        'reverie-lovable-desc': 'After the Figma prototype, I used Lovable (a vibe coding tool) to turn Reverie into a clickable webapp. I started from the AI\'s first output, then refined the UI, copy, and flows to match the design intent.',
+        'reverie-lovable-outcome-title': 'Final outcome',
+        'reverie-lovable-morning-label': 'Morning Routine',
+        'reverie-lovable-night-label': 'Night Routine',
+        'reverie-lovable-changes-title': 'What I changed from Lovable\'s first output',
+        'reverie-lovable-changes-desc': 'The initial build was fast, but needed UX and visual polish to feel like a sleep app. These were the main fixes.',
+        'reverie-lovable-change1-title': '1. Emotional scale design',
+        'reverie-lovable-change1-desc': 'The mood dial interaction was adjusted — it was challenging to fully replicate the original design while keeping it visually distinctive.',
+        'reverie-lovable-change2-title': '2. Clock functionality',
+        'reverie-lovable-change2-desc': 'Though it was a really great animation I made on Figma, it was really hard to implement in code while maintaining its usability.',
+        'reverie-lovable-change3-title': '3. Swipe gestures instead of continue buttons',
+        'reverie-lovable-change3-desc': 'I replaced the continue button with swipe gestures between screens, like Instagram Stories, since maintaining usability with the original animation proved too difficult.',
         'reverie-review-title': 'Project Reflection and Future Outlook',
         'reverie-review-desc': 'Within the limited time of a 3-day hackathon, we were able to implement a consistent design process from user research to prototype.',
         'reverie-review-like-title': 'What I Liked & Excelled At:',
@@ -554,7 +582,7 @@ function updatePageContent() {
     // Update Reverie main features image by language
     const mainfeaturesImg = document.getElementById('reverie-mainfeatures-img');
     if (mainfeaturesImg) {
-        mainfeaturesImg.src = currentLang === 'en' ? 'fourfunctions-english.png' : 'fourfunctions-japanese.png';
+        mainfeaturesImg.src = currentLang === 'en' ? 'reverie_function.png' : 'reverie_function_jp.png';
     }
 
     // Update NextScore hero thumbnail by language

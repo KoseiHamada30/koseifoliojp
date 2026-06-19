@@ -191,6 +191,7 @@
 .research-container,
 .design-container,
 .ui-container,
+.lovable-container,
 .results-container {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr);
@@ -209,12 +210,14 @@
 .research-container,
 .design-container,
 .ui-container,
+.lovable-container,
 .results-container {
     padding: 0 2rem;
 }
 
 .design-left,
-.ui-left {
+.ui-left,
+.lovable-left {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -229,7 +232,8 @@
 .results-right,
 .overview-right,
 .design-right,
-.ui-right {
+.ui-right,
+.lovable-right {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -679,6 +683,155 @@ iframe.user-flow-figma-iframe,
     align-self: start;
 }
 
+.lovable-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: sticky;
+    top: 8rem;
+    align-self: start;
+}
+
+.lovable-right p,
+.lovable-block-desc,
+.lovable-change-copy p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+.lovable-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lovable-block + .lovable-block {
+    margin-top: 2.5rem;
+}
+
+.lovable-block-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.lovable-block-desc {
+    margin: 0;
+}
+
+.lovable-routine-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lovable-routine-group + .lovable-routine-group {
+    margin-top: 2.5rem;
+}
+
+.lovable-routine-group--night {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 1.5rem;
+    align-items: start;
+}
+
+.lovable-routine-group--night .lovable-routine-label,
+.lovable-routine-group--night .lovable-outcome-video {
+    grid-column: 1;
+    width: 100%;
+}
+
+.lovable-routine-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.lovable-routine-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.lovable-routine-row .lovable-outcome-video {
+    width: 100%;
+}
+
+.lovable-outcome-video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: #0a0a0a;
+}
+
+.lovable-change {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+    padding: 1.25rem;
+    background: #ffffff;
+    border-radius: 12px;
+    border-left: 4px solid #1a1a1a;
+}
+
+.lovable-change + .lovable-change {
+    margin-top: 0.25rem;
+}
+
+.lovable-change--text-only {
+    grid-template-columns: 1fr;
+}
+
+.lovable-change-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.lovable-change-copy h5 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .lovable-change {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .lovable-routine-row {
+        grid-template-columns: 1fr;
+    }
+
+    .lovable-routine-group--night {
+        grid-template-columns: 1fr;
+    }
+
+    .lovable-routine-group--night .lovable-routine-label,
+    .lovable-routine-group--night .lovable-outcome-video {
+        grid-column: 1;
+    }
+
+    .lovable-outcome-video {
+        border-radius: 16px;
+    }
+}
+
 .results-subtitle {
     font-size: clamp(1rem, 2vw, 2.35rem);
     font-weight: 400;
@@ -822,6 +975,7 @@ iframe.user-flow-figma-iframe,
     .research-container,
     .design-container,
     .ui-container,
+    .lovable-container,
     .results-container {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1016,10 +1170,11 @@ iframe.user-flow-figma-iframe,
 
 /* Reverie routine mockups + stacked moodboard/video */
 .project1-image-section {
-    padding: 1rem 2rem 0;
+    padding: 1rem 2rem 2rem;
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
+    background: #ffffff;
 }
 
 .project-feature-media {
